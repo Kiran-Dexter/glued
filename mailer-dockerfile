@@ -1,0 +1,19 @@
+# Use the UBI8 Python 3.8 image as our base
+FROM registry.access.redhat.com/ubi8/python-38
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the email sending script into the container
+COPY send_email.py /app/send_email.py
+
+# Optional: Set default environment variables (override these when running the container)
+ENV EMAIL_FROM=your_email@gmail.com
+ENV SMTP_SERVER=smtp.gmail.com
+ENV SMTP_PORT=587
+ENV EMAIL_USERNAME=your_email@gmail.com
+ENV EMAIL_PASSWORD=your_password
+
+# Define the default command with sample arguments
+# Note: Replace these sample arguments when running your container as needed
+CMD ["python3", "send_email.py", "--to", "recipient@example.com", "--subject", "Docker Test Email", "--content", "This email was sent from a Docker container."]
