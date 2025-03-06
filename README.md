@@ -5,3 +5,5 @@ python3 send_email.py --to recipient@example.com --subject "Test Email" --conten
 
 mailer_v4
 python3 send_email.py --to recipient@example.com --subject "Test Email" --content "Hey, check this out!" --attachment "/path/to/file.txt"
+
+--content: The content you want to prepend (this gets combined with the default text from default_email.txt).
